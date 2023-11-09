@@ -13,6 +13,7 @@ ncores <- as.numeric(ncores)
 inla.setOption(num.threads = ncores)
 pdf_outcome <- readRDS("pdf_outcome.rds")
 
+#cases contains all scenarios for my simulation (one scenario per row) 
 params <- read.csv("cases.csv")
 myparams <- params[params$case==vn,]
 
@@ -64,6 +65,7 @@ DB_simulation <- function(N_patient,
   
   #----half t prior-----------------------------------
   #https://becarioprecario.bitbucket.io/inla-gitbook/ch-priors.html#sec:priors
+  #not used here, keep it here for later use
   HT.prior = "expression:
   sigma = exp(-theta/2);
   nu = 3;
