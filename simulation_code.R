@@ -5,6 +5,7 @@ library(boot)
 library(INLA)
 library(tidyverse)
 
+#HPC settings
 v <- Sys.getenv("SLURM_ARRAY_TASK_ID", NA)
 vn <- as.integer(v)
 ncores <- Sys.getenv("SLURM_CPUS_PER_TASK")
