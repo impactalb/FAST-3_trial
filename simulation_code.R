@@ -92,7 +92,8 @@ DB_simulation <- function(N_patient,
           {
             model <- inla(outcome ~  TxARM,
                           family = "pom",
-                          data = sample_data_adj)
+                          data = sample_data_adj,
+                         control.family = list(hyper = list(theta1 = list(param = 100))))
           },
           error = function(e){
             print("Error in INLA")
